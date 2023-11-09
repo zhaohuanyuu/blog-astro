@@ -1,8 +1,14 @@
-# Editor files
-.idea
+# Editor config files
+**/.idea
+**/.vscode
+
+# System files
+.DS_Store
 
 # Dependency directories
 node_modules/
+bun.lockb
+pnpm-lock.yaml
 
 # dotenv environment variable files
 .env
