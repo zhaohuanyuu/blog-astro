@@ -10,6 +10,6 @@ export default defineConfig({
     solidJs(),
   ],
   vite: {
-    plugins: [vanillaExtractPlugin()]
+    plugins: [ vanillaExtractPlugin() ]
   }
 });

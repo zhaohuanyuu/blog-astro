@@ -3,6 +3,17 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
+  "author": "ayuu",
+  "description": "personal blog with astro & vanilla-extract/css version",
+  "keywords": [
+    "blog",
+    "astro",
+    "frontend",
+    "vanila-extract"
+  ],
+  "cli": {
+    "packageManager": "pnpm"
+  },
   "scripts": {
     "astro": "astro",
     "start": "astro dev",
