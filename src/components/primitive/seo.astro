@@ -1,0 +1,35 @@
+---
+const DefaultKeywords = "astro, blog, solidjs"
+const SiteMetaData = [
+  {
+    name: 'name',
+    content: 'ayuu\'s blog'
+  },
+  {
+    name: `description`,
+    content: '前端学习工作记录及分享。'
+  },
+  {
+    property: `og:description`,
+    content: '前端学习工作记录及分享。'
+  },
+  {
+    property: `og:type`,
+    content: `website`,
+  },
+  {
+    name: `keywords`,
+    content: DefaultKeywords
+  }
+]
+---
+
+<Fragment>
+  {
+    SiteMetaData.map(item => (
+      item.name
+        ? <meta name={ item.name } content={ item.content } />
+        : <meta property={ item.property } content={ item.content } />
+    ))
+  }
+</Fragment>

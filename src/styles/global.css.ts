@@ -2,7 +2,7 @@ import { rem } from "./utils"
 import { fonts } from "./fonts.css"
 import { vars } from "./theme/contract.css"
 import { globalStyle } from "@vanilla-extract/css"
-import { CodePrimitiveStyle } from "../components/mdx/Code.css"
+// import { CodePrimitiveStyle } from "../components/mdx/Code.css"
 
 globalStyle('*', {
   wordWrap: 'break-word',
@@ -103,9 +103,9 @@ globalStyle('blockquote > p', {
   margin: 0
 })
 
-globalStyle(`blockquote ${CodePrimitiveStyle}`, {
-  fontSize: "inherit"
-})
+// globalStyle(`blockquote ${CodePrimitiveStyle}`, {
+//   fontSize: "inherit"
+// })
 
 globalStyle(`details`, {
   display: `block`,

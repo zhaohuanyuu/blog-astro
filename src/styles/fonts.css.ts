@@ -1,6 +1,6 @@
 import { style, globalFontFace } from "@vanilla-extract/css"
-import interVariableWoff2 from "./fonts/inter-latin.var.woff2"
-import monolisaVariableWoff2 from "./fonts/monolisa.var.woff2"
+import interVariableWoff2 from "/fonts/inter-latin.var.woff2"
+import monolisaVariableWoff2 from "/fonts/monolisa.var.woff2"
 
 const interVar = 'Inter'
 const monolisa = 'MonoLisa'
