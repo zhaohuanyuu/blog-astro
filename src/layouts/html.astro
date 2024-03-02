@@ -1,7 +1,11 @@
 ---
 import "../styles/reset.css"
 import "../styles/global.css"
-import SEO from "../components/primitive/seo.astro"
+import { theme as darkTheme } from "../styles/theme/dark.css"
+import { theme as lightTheme } from "../styles/theme/light.css"
+
+import SEO from "../components/shared/seo.astro"
+import { THEME_STORAGE_KEY } from "../common/utils"
 
 interface Props {
 	title: string
@@ -26,3 +30,33 @@ const { title } = Astro.props
 		<slot />
  	</body>
 </html>
+
+<script define:vars={{lightTheme, darkTheme, THEME_STORAGE_KEY}} is:inline>
+  const root = document.documentElement;
+  const setTheme = (theme) => {
+    root.style.colorScheme = theme;
+    root.classList.remove(lightTheme, darkTheme);
+    if (theme === "light") {
+      root.classList.add(lightTheme);
+    } else {
+      root.classList.add(darkTheme);
+    }
+  }
+  (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem(THEME_STORAGE_KEY)) {
+      return setTheme(localStorage.getItem(THEME_STORAGE_KEY));
+    }
+    if (matchMedia("(prefers-color-scheme: dark)").matches) {
+      return setTheme("dark");
+    }
+    return setTheme("light");
+  })()
+  const handleStorage = (e) => {
+    if (e.key !== THEME_STORAGE_KEY) {
+      return
+    }
+    const t = e.newValue
+    setTheme(t)
+  }
+  window.addEventListener("storage", handleStorage)
+</script>

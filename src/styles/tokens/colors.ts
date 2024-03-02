@@ -1,4 +1,4 @@
-import { gray } from "../presets/platte"
+import { khaki, gray, blueGray } from "../presets/platte"
 
 export const colorContract = {
   bg: '',
@@ -41,11 +41,10 @@ export const colorContract = {
 export type Colors = keyof typeof colorContract
 
 export const lightColors: typeof colorContract = {
-  bg: '#FFFFFF',
-  // bg: '#F1EFE9',
-  text: '#07070A',
-  textSecondary: '#334155',
-  bgSecondary: '#f9fafa3d',
+  bg: khaki[200],
+  text: gray[900],
+  textSecondary: blueGray[300],
+  bgSecondary: khaki[500],
   primary: '#660099FF',
   secondary: '#9c27b0',
   highlight: '#efeffe',
@@ -80,15 +79,15 @@ export const lightColors: typeof colorContract = {
 }
 
 export const darkColors: typeof colorContract = {
-  bg: 'hsl(230, 25%, 18%)',
-  text: 'hsl(210, 50%, 96%)',
-  textSecondary: 'hsla(213, 9.8%, 88.2%, 1)',
-  bgSecondary: 'hsla(227, 21.9%, 25.1%, 0.3)',
+  bg: blueGray[900],
+  bgSecondary: blueGray[800],
+  text: blueGray[50],
+  textSecondary: blueGray[200],
   primary: 'hsl(260, 100%, 80%)',
   secondary: 'hsl(290, 100%, 80%)',
   highlight: 'hsl(260, 20%, 40%)',
   accent: 'todo',
-  muted: 'hsla(230, 20%, 0%, 20%)',
+  muted: blueGray[300],
   pink: 'hsl(290, 100%, 80%)',
   gray: 'hsl(210, 50%, 60%)',
   blueGray: gray[700],
