@@ -22,10 +22,13 @@
     "lint": "pnpm dlx @biomejs/biomme lint src"
   },
   "dependencies": {
+    "@astrojs/mdx": "^2.1.1",
+    "@astrojs/solid-js": "^4.0.1",
     "astro": "^4.4.1",
     "solid-js": "^1.8.15",
-    "@astrojs/mdx": "^2.1.1",
-    "@astrojs/solid-js": "^4.0.1"
+    "@solid-primitives/props": "^3.1.10",
+    "@solid-primitives/refs": "^1.0.7",
+    "@solid-primitives/utils": "^6.2.3"
   },
   "devDependencies": {
     "typescript": "^5.3.3",

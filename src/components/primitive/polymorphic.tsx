@@ -92,7 +92,7 @@ export function Polymorphic<T extends ValidComponent>(
 	}
 
 	throw new Error(
-		"[kobalte]: Component is expected to render `asChild` but no children `As` component was found.",
+		"[polymorphic]: Component is expected to render `asChild` but no children `As` component was found.",
 	);
 }
 
