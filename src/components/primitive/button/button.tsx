@@ -8,13 +8,15 @@ import { isButton } from "./is-button"
 import { createTagName } from "../creations"
 import { type AsChildProp, Polymorphic } from "../polymorphic";
 
+import { buttonBaseStyle } from "./button.css"
+
 export interface ButtonRootOptions extends AsChildProp {
 	disabled?: boolean;
 }
 
 export interface ButtonRootProps extends OverrideComponentProps<"button", ButtonRootOptions> {}
 
-export function ButtonRoot(props: ButtonRootProps) {
+export function Button(props: ButtonRootProps) {
 	let ref: HTMLButtonElement | undefined;
 
 	const mergedProps = mergeDefaultProps({ type: "button" }, props);
@@ -47,6 +49,7 @@ export function ButtonRoot(props: ButtonRootProps) {
 	return (
 		<Polymorphic
 			as="button"
+      class={buttonBaseStyle}
 			ref={mergeRefs((el) => (ref = el), local.ref)}
 			type={isNativeButton() || isNativeInput() ? local.type : undefined}
 			role={!isNativeButton() && !isNativeLink() ? "button" : undefined}
