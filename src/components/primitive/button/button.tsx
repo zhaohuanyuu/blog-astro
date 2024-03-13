@@ -4,7 +4,7 @@ import {
   mergeDefaultProps,
   type OverrideComponentProps,
 } from "../../../common/utils"
-import clsx from "clsx"
+import clsx from "clsx/lite"
 import { isButton } from "./is-button"
 import { createTagName } from "../creations"
 import { type AsChildProp, Polymorphic } from "../polymorphic";
@@ -51,7 +51,7 @@ export function Button(props: ButtonRootProps) {
 	return (
 		<Polymorphic
 			as="button"
-      class={clsx([buttonBaseStyle, buttonVariants[local.variant]])}
+      class={clsx(buttonBaseStyle, buttonVariants[local.variant])}
 			ref={mergeRefs((el) => (ref = el), local.ref)}
 			type={isNativeButton() || isNativeInput() ? local.type : undefined}
 			role={!isNativeButton() && !isNativeLink() ? "button" : undefined}
