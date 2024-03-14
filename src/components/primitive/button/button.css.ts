@@ -1,3 +1,4 @@
+import { sprinkles } from "../../../styles/sprinkles.css"
 import { style, styleVariants } from "@vanilla-extract/css"
 import { vars } from "../../../styles/theme/contract.css"
 import { transition } from "../../../styles/tokens/motion"
@@ -31,6 +32,12 @@ export const buttonBaseStyle = style({
 })
 
 export const buttonVariants = styleVariants({
+  primary: [
+    sprinkles({
+      p: '1',
+      bg: 'primary',
+    })
+  ],
   ghost: {
     color: 'inherit',
     backgroundColor: 'transparent',
