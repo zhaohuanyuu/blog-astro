@@ -10,8 +10,9 @@ export const buttonBaseStyle = style({
   appearance: 'none',
   alignItems: 'center',
   justifyContent: 'center',
-  userSelect: 'none',
+  border: 'none',
   outline: 'none',
+  userSelect: 'none',
   whiteSpace: 'nowrap',
   verticalAlign: 'middle',
   lineHeight: vars.lineHeight.shorter,
@@ -33,9 +34,13 @@ export const buttonBaseStyle = style({
 
 export const buttonVariants = styleVariants({
   primary: [
+    style({
+      // backgroundColor: vars.color.primary
+    }),
     sprinkles({
-      p: '1',
+      p: '2',
       bg: 'primary',
+      c: 'bg',
     })
   ],
   ghost: {
