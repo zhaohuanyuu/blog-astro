@@ -7,16 +7,16 @@ import { breakpointNames, minMediaQuery, mobile } from "./tokens/breakpoints"
 import { unresponsiveProperties, responsiveProperties } from "./presets/sprinkle-properties"
 
 export const themesSelectors = {
-  light: `html${lightTheme} &`,
-  dark: `html${darkTheme} &`,
+  light: `${lightTheme} &`,
+  dark: `${darkTheme} &`,
 }
 
 const colorAtomProperties = defineProperties({
-  defaultCondition: ['light', 'dark'],
-  conditions: {
-    light: { selector: themesSelectors.light },
-    dark: { selector: themesSelectors.dark }
-  },
+  // defaultCondition: ['light', 'dark'],
+  // conditions: {
+  //   light: { selector: themesSelectors.light },
+  //   dark: { selector: themesSelectors.dark }
+  // },
   properties: {
     color: vars.color,
     borderColor: vars.color,

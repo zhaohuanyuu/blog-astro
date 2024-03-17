@@ -38,9 +38,9 @@ export const buttonVariants = styleVariants({
       // backgroundColor: vars.color.primary
     }),
     sprinkles({
-      p: '2',
+      // p: '2',
+      // bg: 'primary',
       bg: 'primary',
-      c: 'bg',
     })
   ],
   ghost: {
