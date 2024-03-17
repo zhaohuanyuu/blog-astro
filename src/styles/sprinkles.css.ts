@@ -1,14 +1,13 @@
 import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles"
 
-import { vars } from "./theme/contract.css"
 import { theme as darkTheme } from "./theme/dark.css"
 import { theme as lightTheme } from "./theme/light.css"
 import { breakpointNames, minMediaQuery, mobile } from "./tokens/breakpoints"
-import { unresponsiveProperties, responsiveProperties } from "./presets/sprinkle-properties"
+import { colorProperties, unresponsiveProperties, responsiveProperties } from "./presets/sprinkle-properties"
 
 export const themesSelectors = {
-  light: `${lightTheme} &`,
-  dark: `${darkTheme} &`,
+  light: `html.${lightTheme} &`,
+  dark: `html.${darkTheme} &`,
 }
 
 const colorAtomProperties = defineProperties({
@@ -17,11 +16,7 @@ const colorAtomProperties = defineProperties({
   //   light: { selector: themesSelectors.light },
   //   dark: { selector: themesSelectors.dark }
   // },
-  properties: {
-    color: vars.color,
-    borderColor: vars.color,
-    backgroundColor: vars.color
-  },
+  properties: colorProperties,
   shorthands: {
     c: ['color'],
     bc: ['borderColor'],

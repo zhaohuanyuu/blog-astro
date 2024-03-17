@@ -4,42 +4,45 @@ import { vars } from "../../../styles/theme/contract.css"
 import { transition } from "../../../styles/tokens/motion"
 import { pseudoSelectors } from '../../../styles/utils/selectors'
 
-export const buttonBaseStyle = style({
-  position: 'relative',
-  display: 'inline-flex',
-  appearance: 'none',
-  alignItems: 'center',
-  justifyContent: 'center',
-  border: 'none',
-  outline: 'none',
-  userSelect: 'none',
-  whiteSpace: 'nowrap',
-  verticalAlign: 'middle',
-  lineHeight: vars.lineHeight.shorter,
-  borderRadius: vars.borderRadius.md,
-  fontWeight: vars.fontWeight.normal,
-  transitionProperty: transition.property.common,
-  transitionDuration: transition.duration.normal,
-  selectors: {
-    [pseudoSelectors.focusVisible]: {
-      boxShadow: vars.shadow.outline
-    },
-    [pseudoSelectors.disabled]: {
-      opacity: .4,
-      boxShadow: 'none',
-      cursor: 'not-allowed'
+export const buttonBaseStyle = style([
+  {
+    position: 'relative',
+    display: 'inline-flex',
+    appearance: 'none',
+    alignItems: 'center',
+    justifyContent: 'center',
+    border: 'none',
+    outline: 'none',
+    userSelect: 'none',
+    whiteSpace: 'nowrap',
+    transitionProperty: transition.property.common,
+    transitionDuration: transition.duration.normal,
+    selectors: {
+      [pseudoSelectors.hover]: {
+        opacity: .8
+      },
+      [pseudoSelectors.focusVisible]: {
+        boxShadow: vars.shadow.outline
+      },
+      [pseudoSelectors.disabled]: {
+        opacity: .5,
+        boxShadow: 'none',
+        cursor: 'not-allowed'
+      }
     }
-  }
-})
+  },
+  sprinkles({
+    lh: 'short',
+    p: '1',
+    va: 'middle',
+    br: 'base',
+    fw: 'normal',
+  })
+])
 
 export const buttonVariants = styleVariants({
   primary: [
-    style({
-      // backgroundColor: vars.color.primary
-    }),
     sprinkles({
-      // p: '2',
-      // bg: 'primary',
       bg: 'primary',
     })
   ],

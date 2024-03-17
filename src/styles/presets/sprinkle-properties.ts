@@ -1,6 +1,51 @@
 import { vars } from "../theme/contract.css"
 import { zIndices } from "../tokens/z-indices"
 
+const colorAtoms = {
+  text: vars.color.text,
+  textSecondary: vars.color.textSecondary,
+  bgSecondary: vars.color.bgSecondary,
+  primary: vars.color.primary,
+  secondary: vars.color.secondary,
+  highlight: vars.color.highlight,
+  muted: vars.color.muted,
+  accent: vars.color.accent,
+  pink: vars.color.pink,
+  gray: vars.color.gray,
+  blueGray: vars.color.blueGray,
+  border: vars.color.border
+}
+
+export const colorProperties = {
+  color: {
+    text: colorAtoms.text,
+    textSecondary: colorAtoms.textSecondary,
+    primary: colorAtoms.primary,
+    secondary: colorAtoms.secondary,
+    highlight: colorAtoms.highlight,
+    muted: colorAtoms.muted,
+    accent: colorAtoms.accent,
+    pink: colorAtoms.pink,
+    gray: colorAtoms.gray,
+    blueGray: colorAtoms.blueGray
+  },
+  borderColor: {
+    border: colorAtoms.border
+  },
+  backgroundColor: {
+    primary: colorAtoms.primary,
+    secondary: colorAtoms.secondary,
+    highlight: colorAtoms.highlight,
+    muted: colorAtoms.muted,
+    accent: colorAtoms.accent,
+    pink: colorAtoms.pink,
+    gray: colorAtoms.gray,
+    blueGray: colorAtoms.blueGray
+  }
+}
+
+export type ColorProperties = keyof typeof colorProperties;
+
 export const unresponsiveProperties = {
   zIndex: zIndices,
   boxSizing: ['content-box', 'border-box'],
