@@ -1,21 +1,9 @@
 import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles"
 
-import { theme as darkTheme } from "./theme/dark.css"
-import { theme as lightTheme } from "./theme/light.css"
 import { breakpointNames, minMediaQuery, mobile } from "./tokens/breakpoints"
 import { colorProperties, unresponsiveProperties, responsiveProperties } from "./presets/sprinkle-properties"
 
-export const themesSelectors = {
-  light: `html.${lightTheme} &`,
-  dark: `html.${darkTheme} &`,
-}
-
 const colorAtomProperties = defineProperties({
-  // defaultCondition: ['light', 'dark'],
-  // conditions: {
-  //   light: { selector: themesSelectors.light },
-  //   dark: { selector: themesSelectors.dark }
-  // },
   properties: colorProperties,
   shorthands: {
     c: ['color'],

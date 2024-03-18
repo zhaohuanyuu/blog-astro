@@ -1,8 +1,9 @@
-import { khaki, gray, blueGray } from "../presets/platte"
+import { khaki, blue, gray, blueGray } from "../presets/platte"
 
 export const colorContract = {
   bg: '',
   text: '',
+  textMuted: '',
   textSecondary: '',
   bgSecondary: '',
   primary: '',
@@ -16,7 +17,8 @@ export const colorContract = {
   chip: '',
   shadow: '',
   border: '',
-  ghostBg: '',
+  ghost: '',
+  pure: '',
   calloutInfoColor: '',
   calloutInfoBorderColor: '',
   calloutInfoBackgroundColor: '',
@@ -44,6 +46,7 @@ export type Colors = keyof typeof colorContract
 export const lightColors: typeof colorContract = {
   bg: khaki[200],
   text: gray[900],
+  textMuted: khaki[700],
   textSecondary: blueGray[300],
   bgSecondary: khaki[500],
   primary: '#660099FF',
@@ -57,7 +60,8 @@ export const lightColors: typeof colorContract = {
   chip: '#d7d7d95c',
   shadow: '#0000001F',
   border: '#dee2e6',
-  ghostBg: '',
+  ghost: 'rgba(15,23,42,.1)',
+  pure: 'black',
   calloutInfoColor: 'rgb(0, 58, 117)',
   calloutInfoBorderColor: 'rgb(194, 224, 255)',
   calloutInfoBackgroundColor: 'rgba(240, 247, 255, 0.8)',
@@ -84,6 +88,7 @@ export const darkColors: typeof colorContract = {
   bg: blueGray[900],
   bgSecondary: blueGray[800],
   text: blueGray[50],
+  textMuted: gray[400],
   textSecondary: blueGray[200],
   primary: 'hsl(260, 100%, 80%)',
   secondary: 'hsl(290, 100%, 80%)',
@@ -96,7 +101,8 @@ export const darkColors: typeof colorContract = {
   chip: 'hsla(0, 0%, 45%, 0.6)',
   shadow: 'hsla(0, 0%, 0%, 0.35)',
   border: 'hsla(220, 13%, 91%, 0.1)',
-  ghostBg: 'rgba(15,23,42,.1)',
+  ghost: 'hsla(0,0%,100%,.1)',
+  pure: 'white',
   calloutInfoColor: 'rgb(240, 247, 255)',
   calloutInfoBorderColor: 'rgb(0, 76, 153)',
   calloutInfoBackgroundColor: 'rgba(0, 58, 117, 0.2)',
