@@ -33,6 +33,7 @@ export const colorProperties = {
     border: colorAtoms.border
   },
   backgroundColor: {
+    bgSecondary: colorAtoms.bgSecondary,
     primary: colorAtoms.primary,
     secondary: colorAtoms.secondary,
     highlight: colorAtoms.highlight,

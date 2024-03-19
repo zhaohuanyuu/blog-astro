@@ -4,20 +4,22 @@ import {
   mergeDefaultProps,
   type OverrideComponentProps,
 } from "../../../common/utils"
+import clsx from "clsx/lite"
 import { isButton } from "./is-button"
 import { createTagName } from "../creations"
-import { type AsChildProp, Polymorphic } from "../polymorphic";
-import { type ButtonVariants, buttonStyle } from "./button.css"
+import { Polymorphic, type AsChildProp } from "../polymorphic"
+import { ButtonStyle, type ButtonVariants } from "./button.css"
 
 export interface ButtonRootOptions extends AsChildProp {
 	disabled?: boolean
+  class?: string
   color?: ButtonVariants["color"]
   variant?: ButtonVariants["variant"]
 }
 
 export interface ButtonRootProps extends OverrideComponentProps<"button", ButtonRootOptions> {}
 
-export function Button(props: ButtonRootProps) {
+const Button = (props: ButtonRootProps) => {
 	let ref: HTMLButtonElement | undefined;
 
 	const mergedProps = mergeDefaultProps({ type: "button" }, props);
@@ -25,6 +27,7 @@ export function Button(props: ButtonRootProps) {
 	const [local, others] = splitProps(mergedProps, [
     "ref",
     "type",
+    "class",
     "color",
     "variant",
     "disabled",
@@ -56,10 +59,13 @@ export function Button(props: ButtonRootProps) {
 	return (
 		<Polymorphic
 			as="button"
-      class={buttonStyle({
-        color: local.color,
-        variant: local.variant
-      })}
+      class={clsx(
+        ButtonStyle({
+          color: local.color,
+          variant: local.variant
+        }),
+        local.class
+      )}
 			ref={mergeRefs((el) => (ref = el), local.ref)}
 			type={isNativeButton() || isNativeInput() ? local.type : undefined}
 			role={!isNativeButton() && !isNativeLink() ? "button" : undefined}
@@ -79,3 +85,5 @@ export function Button(props: ButtonRootProps) {
 		/>
 	);
 }
+
+export default Button

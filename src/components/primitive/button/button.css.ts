@@ -4,7 +4,7 @@ import { vars } from "../../../styles/theme/contract.css"
 import { transition } from "../../../styles/tokens/motion"
 import { pseudoSelectors } from '../../../styles/utils/selectors'
 
-export const buttonStyle = recipe({
+export const ButtonStyle = recipe({
   base: [
     {
       position: 'relative',
