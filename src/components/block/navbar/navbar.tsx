@@ -1,8 +1,10 @@
-const Navbar = () => {
+import { Polymorphic } from "@components/primitive/polymorphic"
+const Navbar = (props) => {
   return (
-    <nav>
-
-    </nav>
+    <Polymorphic
+      as="nav"
+      children={props.children}
+    />
   )
 }
 
