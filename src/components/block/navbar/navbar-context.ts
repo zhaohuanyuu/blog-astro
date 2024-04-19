@@ -16,7 +16,7 @@ export function useTabsContext() {
 
 	if (context === undefined) {
 		throw new Error(
-			"[kobalte]: `useTabsContext` must be used within a `Tabs` component",
+			"`useTabsContext` must be used within a `Tabs` component",
 		);
 	}
 
