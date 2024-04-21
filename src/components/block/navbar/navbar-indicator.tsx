@@ -1,7 +1,9 @@
 import { Polymorphic } from "@components/primitive/polymorphic"
 
-const TabsIndicator = (props) => {
+const NavbarIndicator = (props) => {
   return (
     <Polymorphic as="div" role="presentation" />
   )
 }
+
+export default NavbarIndicator

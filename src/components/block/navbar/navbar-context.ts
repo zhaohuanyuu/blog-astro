@@ -1,8 +1,8 @@
 import {
-  type Accessor,
   type Setter,
-  createContext,
-  useContext
+  type Accessor,
+  useContext,
+  createContext
 } from "solid-js";
 
 export interface TabsContextValue {
