@@ -22,23 +22,23 @@
     "lint": "pnpm dlx @biomejs/biomme lint src"
   },
   "dependencies": {
-    "@astrojs/mdx": "^2.2.0",
-    "@astrojs/solid-js": "^4.0.1",
+    "@astrojs/mdx": "^2.3.1",
+    "@astrojs/solid-js": "^4.1.0",
     "solid-motionone": "^1.0.0",
     "@solid-primitives/props": "^3.1.11",
     "@solid-primitives/refs": "^1.0.8",
     "@solid-primitives/utils": "^6.2.3",
-    "@vanilla-extract/css": "^1.14.1",
+    "@vanilla-extract/css": "^1.14.2",
     "@vanilla-extract/dynamic": "^2.1.0",
     "@vanilla-extract/recipes": "^0.5.2",
     "@vanilla-extract/sprinkles": "^1.6.1",
-    "astro": "^4.5.5",
+    "astro": "^4.6.3",
     "clsx": "^2.1.0",
-    "solid-js": "^1.8.15"
+    "solid-js": "^1.8.16"
   },
   "devDependencies": {
-    "typescript": "^5.4.2",
-    "@biomejs/biome": "1.6.1",
-    "@vanilla-extract/vite-plugin": "^4.0.6"
+    "typescript": "^5.4.5",
+    "@biomejs/biome": "1.7.0",
+    "@vanilla-extract/vite-plugin": "^4.0.7"
   }
 }
