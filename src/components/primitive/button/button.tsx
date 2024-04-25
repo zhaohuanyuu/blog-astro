@@ -6,7 +6,7 @@ import {
 } from "../../../common/utils"
 import clsx from "clsx/lite"
 import { isButton } from "./is-button"
-import { createTagName } from "../creations"
+import { useTagName } from "./use-tag-name"
 import { Polymorphic, type AsChildProp } from "../polymorphic"
 import { ButtonStyle, type ButtonVariants } from "./button.css"
 
@@ -33,7 +33,7 @@ const Button = (props: ButtonRootProps) => {
     "disabled",
   ]);
 
-	const tagName = createTagName(
+	const tagName = useTagName(
 		() => ref,
 		() => "button",
 	);
