@@ -1,8 +1,65 @@
-const FontAwesomeIcon = () => {
+import {
+  For,
+  Show,
+  createMemo,
+  type JSX,
+  type Accessor
+} from "solid-js"
+import clsx from "clsx/lite";
+import { parse, icon, type AbstractElement } from "@fortawesome/fontawesome-svg-core"
+import type { FontAwesomeIconProps } from "./type"
+
+const fallbackIcon = (
+  <svg>
+    <path
+      fill="red"
+      d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"
+    />
+  </svg>
+);
+
+const FontAwesomeIcon = (props: FontAwesomeIconProps): JSX.Element => {
+  const transform = typeof props.transform === "string" ? parse.transform(props.transform) : props.transform;
+  const abstract: Accessor<AbstractElement> = createMemo<AbstractElement>((): AbstractElement => {
+    const faicon = icon(parse.icon(props.icon));
+    if (!faicon) {
+      console.error(`The icon ${props.icon} was not found in the library`);
+      return { tag: "", attributes: {} };
+    }
+    return faicon.abstract[0];
+  })
+  const composedCls = clsx(
+    'svg-inline-fa',
+    props.icon,
+    props.swapOpacity && 'fa-swap-opacity',
+    props.className,
+    props.inverse && 'fa-inverse'
+  )
+  const styles = `font-size:${transform?.size ? transform.size / 16 : 1}em`;
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" height="72px">
-      <path d="M228.5 511.8l-25-7.1c-3.2-.9-5-4.2-4.1-7.4L340.1 4.4c.9-3.2 4.2-5 7.4-4.1l25 7.1c3.2.9 5 4.2 4.1 7.4L235.9 507.6c-.9 3.2-4.3 5.1-7.4 4.2zm-75.6-125.3l18.5-20.9c1.9-2.1 1.6-5.3-.5-7.1L49.9 256l121-102.5c2.1-1.8 2.4-5 .5-7.1l-18.5-20.9c-1.8-2.1-5-2.3-7.1-.4L1.7 252.3c-2.3 2-2.3 5.5 0 7.5L145.8 387c2.1 1.8 5.3 1.6 7.1-.5zm277.3.4l144.1-127.2c2.3-2 2.3-5.5 0-7.5L430.2 125.1c-2.1-1.8-5.2-1.6-7.1.4l-18.5 20.9c-1.9 2.1-1.6 5.3.5 7.1l121 102.5-121 102.5c-2.1 1.8-2.4 5-.5 7.1l18.5 20.9c1.8 2.1 5 2.3 7.1.4z" />
-    </svg>
+    <Show
+      fallback={fallbackIcon}
+      when={abstract().tag === 'svg'}
+    >
+      <svg
+        style={styles}
+        class={composedCls}
+        { ...abstract().attributes }
+      >
+        <Show when={(abstract().children || [])[0].tag === "path"}>
+          <path
+            { ...(abstract().children || [])[0].attributes }
+          />
+        </Show>
+        <Show when={(abstract().children || [])[0].tag === "g"}>
+          <g { ...(abstract().children || [])[0].attributes }>
+            <For each={(abstract().children || [])[0].children}>
+              { path => <path { ...path.attributes } /> }
+            </For>
+          </g>
+        </Show>
+      </svg>
+    </Show>
   )
 }
 
