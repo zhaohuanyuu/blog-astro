@@ -34,11 +34,11 @@
     "astro": "^4.8.1",
     "clsx": "^2.1.1",
     "solid-js": "^1.8.17",
-    "solid-motionone": "^1.0.0"
+    "solid-motionone": "^1.0.0",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2"
   },
   "devDependencies": {
     "@biomejs/biome": "1.7.3",
-    "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@vanilla-extract/vite-plugin": "^4.0.9",
     "typescript": "^5.4.5"
   }
