@@ -6,8 +6,13 @@ import {
   type Accessor
 } from "solid-js"
 import clsx from "clsx/lite";
-import { parse, icon, type AbstractElement } from "@fortawesome/fontawesome-svg-core"
 import type { FontAwesomeIconProps } from "./type"
+import { inverse, opacity } from "./fontawesome.css"
+import {
+  parse,
+  icon,
+  type AbstractElement
+} from "@fortawesome/fontawesome-svg-core"
 
 const fallbackIcon = (
   <svg>
@@ -31,9 +36,9 @@ const FontAwesomeIcon = (props: FontAwesomeIconProps): JSX.Element => {
   const composedCls = clsx(
     'svg-inline-fa',
     props.icon,
-    props.swapOpacity && 'fa-swap-opacity',
+    props.swapOpacity && opacity,
     props.className,
-    props.inverse && 'fa-inverse'
+    props.inverse && inverse
   )
   const styles = `font-size:${transform?.size ? transform.size / 16 : 1}em`;
   return (

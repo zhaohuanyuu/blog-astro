@@ -31,7 +31,7 @@
     "@vanilla-extract/dynamic": "^2.1.0",
     "@vanilla-extract/recipes": "^0.5.2",
     "@vanilla-extract/sprinkles": "^1.6.1",
-    "astro": "^4.8.1",
+    "astro": "^4.8.6",
     "clsx": "^2.1.1",
     "solid-js": "^1.8.17",
     "solid-motionone": "^1.0.0",

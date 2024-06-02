@@ -1,1 +1,3 @@
-export { default as Button } from "./button"
+import Root from "./button"
+
+export { Root };
