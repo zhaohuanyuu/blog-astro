@@ -19,11 +19,13 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "lint": "pnpm dlx @biomejs/biomme lint src"
+    "lint": "pnpm dlx @biomejs/biomme lint src",
+    "fontawesome": "node --import @swc-node/register/esm-register scripts/fontawesome/index.ts"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.0.0",
     "@astrojs/solid-js": "^4.2.0",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@solid-primitives/props": "^3.1.11",
     "@solid-primitives/refs": "^1.0.8",
     "@solid-primitives/utils": "^6.2.3",
@@ -34,11 +36,11 @@
     "astro": "^4.8.6",
     "clsx": "^2.1.1",
     "solid-js": "^1.8.17",
-    "solid-motionone": "^1.0.0",
-    "@fortawesome/fontawesome-svg-core": "^6.5.2"
+    "solid-motionone": "^1.0.0"
   },
   "devDependencies": {
     "@biomejs/biome": "1.7.3",
+    "@swc-node/register": "^1.9.1",
     "@vanilla-extract/vite-plugin": "^4.0.9",
     "typescript": "^5.4.5"
   }

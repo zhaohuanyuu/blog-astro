@@ -1,10 +1,12 @@
 ---
 import Html from "../layouts/html.astro"
-import { Navbar } from "../components"
+import { Navbar, Fa } from "../components"
+import { fasArrowsToCircle } from "@faicons/solid";
 ---
 
 <Html title='Index'>
-  <p>asd</p>
+  <p>rem16</p>
+  <Fa.Icon icon={fasArrowsToCircle} />
   <Navbar.Root>This is navbar placeholder</Navbar.Root>
 </Html>
 

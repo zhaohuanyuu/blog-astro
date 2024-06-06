@@ -1,14 +1,27 @@
 import type {
   SizeProp,
-  Transform
+  Transform,
+  IconLookup,
+  IconPathData
 } from "@fortawesome/fontawesome-svg-core"
 
+export type IconDefinition = IconLookup & {
+  icon: [
+    number, // width
+    number, // height
+    (string | number)[], // ligatures
+    string, // unicode
+    IconPathData // svgPathData
+  ];
+}
+
+
 export type FontAwesomeIconProps = {
-  icon: string;
+  icon: IconDefinition;
   size?: SizeProp;
   // mask?: IconProp
   // maskId?: string
-  className?: string;
+  class?: string;
   // color?: string
   // spin?: boolean
   // spinPulse?: boolean

@@ -1,13 +1,17 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
+    "module": "ESNext",
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
     "baseUrl": "./src",
     "paths": {
       "@common/*": ["common/*"],
       "@styles/*": ["styles/*"],
       "@components/*": ["components/*"],
+      "@faicons/*": ["components/block/fontawesome/svgs/*"]
     }
   }
 }

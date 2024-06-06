@@ -1,7 +1,10 @@
 import { recipe } from "@vanilla-extract/recipes"
-import { createVar, style } from "@vanilla-extract/css"
+import { createVar, globalStyle, style } from "@vanilla-extract/css"
 import { sprinkles } from "../../../styles/sprinkles.css"
 
+export const svg = sprinkles({
+  dp: 'inline-block'
+})
 export const inverse = style({
   color: 'currentcolor',
   filter: 'invert()'
@@ -26,19 +29,19 @@ export const layer = recipe({
   variants: {
     size: {
       sm: {
-        fontSize: '1.3333em'
+        fontSize: '1em'
       },
       md: {
-        fontSize: '1.6em'
+        fontSize: '2em'
       },
       lg: {
-
+        fontSize: '3em'
       },
       xl: {
-
+        fontSize: '4em'
       },
       xxl: {
-
+        fontSize: '5em'
       }
     },
     pull: {
@@ -65,14 +68,12 @@ export const layerText = style([
   {
     top: '50%',
     left: '50%',
-    transform: 'translate(-50%, -50%)',
-    selectors: {
-      "& span": {
-        display: "inline-block",
-      }
-    }
+    transform: 'translate(-50%, -50%)'
   }
 ])
+globalStyle(`${layerText} span`, {
+  display: "inline-block"
+})
 
 export const textColor = createVar();
 export const layerTextInner = style({

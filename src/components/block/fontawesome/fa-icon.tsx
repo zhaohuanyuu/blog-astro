@@ -3,7 +3,7 @@ import {
   Show,
   createMemo,
   type JSX,
-  type Accessor
+  type Accessor,
 } from "solid-js"
 import clsx from "clsx/lite";
 import type { FontAwesomeIconProps } from "./type"
@@ -23,42 +23,44 @@ const fallbackIcon = (
   </svg>
 );
 
+
 const FontAwesomeIcon = (props: FontAwesomeIconProps): JSX.Element => {
   const transform = typeof props.transform === "string" ? parse.transform(props.transform) : props.transform;
   const abstract: Accessor<AbstractElement> = createMemo<AbstractElement>((): AbstractElement => {
-    const faicon = icon(parse.icon(props.icon));
+    const faicon = icon(props.icon);
     if (!faicon) {
       console.error(`The icon ${props.icon} was not found in the library`);
       return { tag: "", attributes: {} };
     }
     return faicon.abstract[0];
   })
+  const { tag, children, attributes } = abstract();
+  const { class: iconCls, ...abstractAttrs } = attributes;
   const composedCls = clsx(
-    'svg-inline-fa',
-    props.icon,
+    iconCls,
+    props.class,
     props.swapOpacity && opacity,
-    props.className,
     props.inverse && inverse
   )
   const styles = `font-size:${transform?.size ? transform.size / 16 : 1}em`;
   return (
     <Show
       fallback={fallbackIcon}
-      when={abstract().tag === 'svg'}
+      when={tag === 'svg'}
     >
       <svg
         style={styles}
         class={composedCls}
-        { ...abstract().attributes }
+        { ...abstractAttrs }
       >
-        <Show when={(abstract().children || [])[0].tag === "path"}>
+        <Show when={(children || [])[0].tag === "path"}>
           <path
-            { ...(abstract().children || [])[0].attributes }
+            { ...(children || [])[0].attributes }
           />
         </Show>
-        <Show when={(abstract().children || [])[0].tag === "g"}>
-          <g { ...(abstract().children || [])[0].attributes }>
-            <For each={(abstract().children || [])[0].children}>
+        <Show when={(children || [])[0].tag === "g"}>
+          <g { ...(children || [])[0].attributes }>
+            <For each={(children || [])[0].children}>
               { path => <path { ...path.attributes } /> }
             </For>
           </g>
