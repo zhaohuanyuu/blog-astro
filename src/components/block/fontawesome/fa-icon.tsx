@@ -15,10 +15,10 @@ import {
 } from "@fortawesome/fontawesome-svg-core"
 
 const fallbackIcon = (
-  <svg>
+  <svg viewBox="0 0 382 512" width="18" height="26">
     <path
-      fill="red"
-      d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"
+      fill="currentColor"
+      d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM192 192c13.3 0 24 10.7 24 24V328c0 13.3-10.7 24-24 24s-24-10.7-24-24V216c0-13.3 10.7-24 24-24zM160 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"
     />
   </svg>
 );
@@ -42,7 +42,7 @@ const FontAwesomeIcon = (props: FontAwesomeIconProps): JSX.Element => {
     props.swapOpacity && opacity,
     props.inverse && inverse
   )
-  const styles = `font-size:${transform?.size ? transform.size / 16 : 1}em`;
+  const styles = `height:1em;font-size:${transform?.size ? transform.size / 16 : 1}em`;
   return (
     <Show
       fallback={fallbackIcon}
