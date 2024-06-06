@@ -1,4 +1,9 @@
-import { globalStyle, style, StyleRule, styleVariants } from "@vanilla-extract/css"
+import {
+  type StyleRule,
+  style,
+  globalStyle,
+  styleVariants
+} from "@vanilla-extract/css"
 import { vars } from "./theme/contract.css"
 import { minMediaQuery } from "./tokens/breakpoints"
 import { headingFontFamilyClass } from "../styles/fonts.css"
