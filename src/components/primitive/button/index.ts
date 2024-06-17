@@ -1,3 +1,3 @@
 import Root from "./button"
 
-export { Root };
+export const Button = Object.assign(Root, { /* variants */});

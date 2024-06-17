@@ -1,8 +1,8 @@
-import { type RecipeVariants, recipe } from "@vanilla-extract/recipes"
-import { sprinkles } from "../../../styles/sprinkles.css"
-import { vars } from "../../../styles/theme/contract.css"
-import { transition } from "../../../styles/tokens/motion"
-import { pseudoSelectors } from '../../../styles/utils/selectors'
+import { recipe, type RecipeVariants } from "@vanilla-extract/recipes"
+import { sprinkles } from "@styles/sprinkles.css"
+import { vars } from "@styles/theme/contract.css"
+import { transition } from "@styles/tokens/motion"
+import { pseudoSelectors } from '@styles/utils/selectors'
 
 export const ButtonStyle = recipe({
   base: [

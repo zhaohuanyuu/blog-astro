@@ -9,9 +9,7 @@ function toPascalCase(str) {
 async function process(filename) {
   const faSolid = JSON.parse(
     await fs.readFile(
-      new URL('./solid.json',
-      import.meta.url), 'utf-8'
-    )
+      new URL('./solid.json', import.meta.url), 'utf-8')
   );
   let content = `import type { IconDefinition } from "../type"\n\n`
                 + `const PREFIX = 'fas'\n\n`;

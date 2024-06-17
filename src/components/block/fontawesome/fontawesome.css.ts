@@ -1,6 +1,6 @@
 import { recipe } from "@vanilla-extract/recipes"
 import { createVar, globalStyle, style } from "@vanilla-extract/css"
-import { sprinkles } from "../../../styles/sprinkles.css"
+import { sprinkles } from "@styles/sprinkles.css"
 
 export const svg = sprinkles({
   dp: 'inline-block'
