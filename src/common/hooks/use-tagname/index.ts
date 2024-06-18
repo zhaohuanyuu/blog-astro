@@ -6,6 +6,9 @@ import {
   type Component
 } from "solid-js"
 
+function stringOrUndefined(value: any) {
+	return isString(value) ? value : undefined;
+}
 
 export function useTagName(
   ref: Accessor<HTMLElement | undefined>,
@@ -18,6 +21,4 @@ export function useTagName(
   return tagName
 }
 
-function stringOrUndefined(value: any) {
-	return isString(value) ? value : undefined;
-}
+

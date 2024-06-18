@@ -1,28 +1,47 @@
-import { createMemo, splitProps } from "solid-js"
+import {
+  createMemo,
+  splitProps,
+  type ValidComponent
+} from "solid-js"
 import {
   mergeRefs,
-  mergeDefaultProps,
-  type OverrideComponentProps,
-} from "../../../common/utils"
+  mergeDefaultProps
+} from "@common/utils"
 import clsx from "clsx/lite"
 import { isButton } from "./is-button"
-import { useTagName } from "./use-tag-name"
-import { Polymorphic, type AsChildProp } from "../polymorphic"
+import { useTagName } from "@common/hooks"
 import { ButtonStyle, type ButtonVariants } from "./button.css"
+import { Polymorphic, type ElementOf, type PolymorphicProps } from "../polymorphic"
 
-export interface ButtonRootOptions extends AsChildProp {
-	disabled?: boolean
+export interface ButtonOptions {
   class?: string
   color?: ButtonVariants["color"]
   variant?: ButtonVariants["variant"]
 }
 
-export interface ButtonRootProps extends OverrideComponentProps<"button", ButtonRootOptions> {}
+export interface ButtonCommonProps<T extends HTMLElement = HTMLElement> extends ButtonOptions {
+	disabled: boolean | undefined;
+	type: string | undefined;
+	ref: T | ((el: T) => void);
+	tabIndex: number | string | undefined;
+}
 
-const Button = (props: ButtonRootProps) => {
-	let ref: HTMLButtonElement | undefined;
+export interface ButtonRenderProps extends ButtonCommonProps {
+  role: "menuitem" | "button" | undefined;
+  "aria-disabled": boolean | undefined;
+  "data-disabled": string | undefined;
+}
 
-	const mergedProps = mergeDefaultProps({ type: "button" }, props);
+export type ButtonProps<
+  T extends ValidComponent | ButtonOptions | HTMLElement = HTMLElement
+> = ButtonOptions & Partial<ButtonCommonProps<ElementOf<T>>>
+
+const Button = <T extends ValidComponent = "button">(
+  props: PolymorphicProps<T, ButtonProps<T>>
+) => {
+	let ref: HTMLElement | undefined;
+
+	const mergedProps = mergeDefaultProps({ type: "button" }, props as ButtonProps);
 
 	const [local, others] = splitProps(mergedProps, [
     "ref",
@@ -57,7 +76,7 @@ const Button = (props: ButtonRootProps) => {
 	});
 
 	return (
-		<Polymorphic
+		<Polymorphic<ButtonRenderProps>
 			as="button"
       class={clsx(
         ButtonStyle({

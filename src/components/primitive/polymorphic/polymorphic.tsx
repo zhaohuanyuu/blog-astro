@@ -8,7 +8,7 @@
  * https://github.com/radix-ui/primitives/blob/b14ac1fff0cdaf45d1ea3e65c28c320ac0f743f2/packages/react/slot/src/Slot.tsx
  */
 
-import { combineProps as baseCombineProps, isArray } from "../../common/utils";
+import { combineProps as baseCombineProps, isArray } from "../../../common/utils";
 import {
 	For,
 	Show,
