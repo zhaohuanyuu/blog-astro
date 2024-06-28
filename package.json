@@ -5,12 +5,7 @@
   "private": true,
   "author": "ayuu",
   "description": "personal blog with astro & vanilla-extract/css version",
-  "keywords": [
-    "blog",
-    "astro",
-    "frontend",
-    "vanila-extract"
-  ],
+  "keywords": ["blog", "astro", "frontend", "vanila-extract"],
   "cli": {
     "packageManager": "pnpm"
   },
@@ -19,12 +14,13 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "lint": "pnpm @biomejs/biomme lint --write ./src",
+    "lint": "pnpm biome lint ./src",
+    "fix": "pnpx biome --write ./src",
     "fontawesome": "node --import @swc-node/register/esm-register scripts/fontawesome/index.ts"
   },
   "dependencies": {
-    "@astrojs/mdx": "^3.1.0",
-    "@astrojs/solid-js": "^4.3.0",
+    "@astrojs/mdx": "^3.1.2",
+    "@astrojs/solid-js": "^4.4.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@solid-primitives/props": "^3.1.11",
     "@solid-primitives/refs": "^1.0.8",
@@ -34,15 +30,15 @@
     "@vanilla-extract/dynamic": "^2.1.1",
     "@vanilla-extract/recipes": "^0.5.3",
     "@vanilla-extract/sprinkles": "^1.6.2",
-    "astro": "^4.10.2",
+    "astro": "^4.11.3",
     "clsx": "^2.1.1",
     "solid-js": "^1.8.17",
     "solid-motionone": "^1.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.8.1",
-    "@swc-node/register": "^1.9.2",
-    "@vanilla-extract/vite-plugin": "^4.0.11",
-    "typescript": "^5.4.5"
+    "@biomejs/biome": "1.8.3",
+    "@swc-node/register": "^1.10.0",
+    "@vanilla-extract/vite-plugin": "^4.0.12",
+    "typescript": "^5.5.2"
   }
 }
