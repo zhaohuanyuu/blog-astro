@@ -45,14 +45,14 @@ const headings: Record<Headings, StyleRule> = {
     marginBottom: vars.space[6],
     fontSize: vars.fontSize['2xl'],
     "@media": {
-      [minMediaQuery(`sm`)]: {
-        fontSize: vars.fontSize[`xl`],
+      [minMediaQuery("sm")]: {
+        fontSize: vars.fontSize.xl,
       },
-      [minMediaQuery(`lg`)]: {
-        fontSize: vars.fontSize[`2xl`],
+      [minMediaQuery("lg")]: {
+        fontSize: vars.fontSize["2xl"],
       },
-      [minMediaQuery(`xl`)]: {
-        fontSize: vars.fontSize[`3xl`],
+      [minMediaQuery("xl")]: {
+        fontSize: vars.fontSize["3xl"],
       }
     }
   },
@@ -63,13 +63,13 @@ const headings: Record<Headings, StyleRule> = {
     marginBottom: vars.space[3],
     fontSize: vars.fontSize.lgx,
     "@media": {
-      [minMediaQuery(`sm`)]: {
+      [minMediaQuery("sm")]: {
         fontSize: vars.fontSize.lg,
       },
-      [minMediaQuery(`lg`)]: {
+      [minMediaQuery("lg")]: {
         fontSize: vars.fontSize.lgx,
       },
-      [minMediaQuery(`xl`)]: {
+      [minMediaQuery("xl")]: {
         fontSize: vars.fontSize.xl,
       }
     }
@@ -81,10 +81,10 @@ const headings: Record<Headings, StyleRule> = {
     marginBottom: vars.space[2],
     fontSize: vars.fontSize.lg,
     "@media": {
-      [minMediaQuery(`lg`)]: {
+      [minMediaQuery("lg")]: {
         fontSize: vars.fontSize.lg,
       },
-      [minMediaQuery(`xl`)]: {
+      [minMediaQuery("xl")]: {
         fontSize: vars.fontSize.lgx,
       },
     }
@@ -96,10 +96,10 @@ const headings: Record<Headings, StyleRule> = {
     marginBottom: vars.space[1],
     fontSize: vars.fontSize.md,
     "@media": {
-      [minMediaQuery(`lg`)]: {
+      [minMediaQuery("lg")]: {
         fontSize: vars.fontSize.lg,
       },
-      [minMediaQuery(`xl`)]: {
+      [minMediaQuery("xl")]: {
         fontSize: vars.fontSize.md,
       },
     }

@@ -14,8 +14,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "lint": "pnpm biome lint ./src",
-    "fix": "pnpx biome --write ./src",
+    "lint": "pnpm biome lint --write ./src",
     "fontawesome": "node --import @swc-node/register/esm-register scripts/fontawesome/index.ts"
   },
   "dependencies": {

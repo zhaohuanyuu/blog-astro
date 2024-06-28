@@ -1,6 +1,6 @@
 export const zIndices = {
   hide: -1,
-  auto: `auto`,
+  auto: "auto",
   base: 0,
   docked: 10,
   dropdown: 1000,
